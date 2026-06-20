@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Department Hero Banner -->
+<section class="position-relative d-flex align-items-center justify-content-center text-white" style="height: 60vh; background: linear-gradient(rgba(13, 110, 253, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=1600&q=80') center/cover;">
+    <div class="text-center z-2 gsap-reveal">
+        <i class="bi bi-cpu display-1 mb-3 text-warning"></i>
+        <h1 class="display-3 fw-bold">Computer Hardware Engineering</h1>
+        <p class="lead fw-light">Building the Foundations of Technology</p>
+    </div>
+</section>
+
+<!-- 1. Department Overview & 2. Why Choose -->
+<section class="section-padding bg-light">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 gsap-reveal">
+                <h6 class="text-primary fw-bold text-uppercase tracking-wider">Overview</h6>
+                <h2 class="display-5 fw-bold mb-4">Engineering Robust Systems</h2>
+                <p class="lead text-muted">The Department of Computer Hardware Engineering offers a specialized curriculum that focuses on the physical components of computing systems, networking hardware, and the integration of hardware and software.</p>
+                <p>As the world increasingly relies on cloud computing, IoT devices, and complex server infrastructures, the need for skilled hardware engineers has never been higher. Our program is designed to provide hands-on experience in assembling, troubleshooting, and maintaining computer architectures. We bridge the critical gap between electronic circuitry and software execution, ensuring our students understand how processors, memory, and peripherals communicate at the lowest levels.</p>
+            </div>
+            <div class="col-lg-6 gsap-reveal">
+                <div class="glass-card p-5 bg-white border-0 shadow-sm">
+                    <h3 class="fw-bold mb-4">Why Choose Hardware Engineering?</h3>
+                    <ul class="list-unstyled">
+                        <li class="d-flex mb-3">
+                            <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                            <div>
+                                <h5 class="fw-bold mb-1">Essential Industry Backbone</h5>
+                                <p class="text-muted small">Every software application relies on hardware to run. You will be the architect of the physical systems that power the digital world.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex mb-3">
+                            <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                            <div>
+                                <h5 class="fw-bold mb-1">Growth of IoT and Edge Computing</h5>
+                                <p class="text-muted small">The explosion of smart devices requires hardware experts to design and maintain interconnected physical systems.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex">
+                            <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                            <div>
+                                <h5 class="fw-bold mb-1">Hands-on Problem Solving</h5>
+                                <p class="text-muted small">Perfect for students who enjoy tactile learning, building physical machines, and troubleshooting complex technical issues.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 12. Statistics Section -->
+<section class="py-5 text-white" style="background-color: var(--primary-color);">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-3 gsap-reveal">
+                <h2 class="display-4 fw-bold counter" data-target="60">0</h2>
+                <p class="mb-0 fs-5">Annual Intake</p>
+            </div>
+            <div class="col-md-3 gsap-reveal">
+                <h2 class="display-4 fw-bold counter" data-target="92">0</h2>
+                <p class="mb-0 fs-5">% Placement Rate</p>
+            </div>
+            <div class="col-md-3 gsap-reveal">
+                <h2 class="display-4 fw-bold counter" data-target="120">0</h2>
+                <p class="mb-0 fs-5">Projects Completed</p>
+            </div>
+            <div class="col-md-3 gsap-reveal">
+                <h2 class="display-4 fw-bold counter" data-target="3">0</h2>
+                <p class="mb-0 fs-5">Hardware Labs</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Major Subjects & 5. Skills -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-7 gsap-reveal">
+                <h2 class="display-6 fw-bold mb-4">Major Subjects Covered</h2>
+                <p class="text-muted mb-4">Our curriculum provides a deep dive into the physical architecture of modern computing.</p>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded shadow-sm hover-lift bg-light">
+                            <h5 class="fw-bold text-primary"><i class="bi bi-pc-display me-2"></i>Computer Architecture</h5>
+                            <p class="small text-muted mb-0">Microprocessors, memory hierarchy, and instruction set architectures.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded shadow-sm hover-lift bg-light">
+                            <h5 class="fw-bold text-primary"><i class="bi bi-tools me-2"></i>Hardware Maintenance</h5>
+                            <p class="small text-muted mb-0">Diagnostic testing, motherboard repair, and peripheral troubleshooting.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded shadow-sm hover-lift bg-light">
+                            <h5 class="fw-bold text-primary"><i class="bi bi-router me-2"></i>Networking Hardware</h5>
+                            <p class="small text-muted mb-0">Physical configuration of routers, switches, cabling, and network topologies.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded shadow-sm hover-lift bg-light">
+                            <h5 class="fw-bold text-primary"><i class="bi bi-chip me-2"></i>Embedded Systems</h5>
+                            <p class="small text-muted mb-0">Microcontrollers (Arduino, Raspberry Pi), sensor integration, and real-time processing.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded shadow-sm hover-lift bg-light">
+                            <h5 class="fw-bold text-primary"><i class="bi bi-smartwatch me-2"></i>IoT Devices</h5>
+                            <p class="small text-muted mb-0">Building connected devices, wireless communication, and smart home technologies.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded shadow-sm hover-lift bg-light">
+                            <h5 class="fw-bold text-primary"><i class="bi bi-hdd-rack me-2"></i>System & Server Admin</h5>
+                            <p class="small text-muted mb-0">Linux server configuration, virtualization, and enterprise hardware management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 gsap-reveal">
+                <div class="glass-card p-5 bg-dark text-white border-0 h-100">
+                    <h3 class="fw-bold mb-4">Skills You Will Gain</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="bi bi-check2-square text-warning me-2"></i> <strong>Technical Skills:</strong> Hardware assembly, soldering, circuit testing, and network configuration.</li>
+                        <li class="mb-3"><i class="bi bi-check2-square text-warning me-2"></i> <strong>Software Tools:</strong> Wireshark, Cisco Packet Tracer, OS deployment tools, and diagnostics software.</li>
+                        <li class="mb-3"><i class="bi bi-check2-square text-warning me-2"></i> <strong>Industry Skills:</strong> IT infrastructure planning, hardware lifecycle management, and disaster recovery.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. Laboratories -->
+<section class="section-padding bg-light">
+    <div class="container">
+        <div class="text-center mb-5 gsap-reveal">
+            <h2 class="display-5 fw-bold">Specialized Laboratories</h2>
+            <p class="lead text-muted">Where theory meets physical execution</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4 gsap-reveal">
+                <div class="card h-100 border-0 shadow-sm hover-lift">
+                    <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=600&q=80" class="card-img-top" style="height:200px; object-fit:cover;">
+                    <div class="card-body">
+                        <h4 class="fw-bold">Hardware Assembly Lab</h4>
+                        <p class="text-muted small">Equipped with hundreds of components for students to practice building, disassembling, and troubleshooting PCs and servers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 gsap-reveal">
+                <div class="card h-100 border-0 shadow-sm hover-lift">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80" class="card-img-top" style="height:200px; object-fit:cover;">
+                    <div class="card-body">
+                        <h4 class="fw-bold">Networking Infrastructure Lab</h4>
+                        <p class="text-muted small">Features enterprise-grade racks, patch panels, and switching equipment for physical network design and maintenance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 gsap-reveal">
+                <div class="card h-100 border-0 shadow-sm hover-lift">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" class="card-img-top" style="height:200px; object-fit:cover;">
+                    <div class="card-body">
+                        <h4 class="fw-bold">Embedded Systems & IoT Lab</h4>
+                        <p class="text-muted small">A creative space filled with microcontrollers, sensors, and actuators for building smart devices and automation systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. Career Opportunities & 7. Industry Applications -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 gsap-reveal">
+                <h2 class="fw-bold mb-4">Career Opportunities</h2>
+                <div class="accordion shadow-sm" id="careerAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header"><button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#c1">Private Sector Jobs</button></h2>
+                        <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#careerAccordion">
+                            <div class="accordion-body">Roles include Hardware Engineer, Network Administrator, System Integration Specialist, IT Support Engineer, and IoT Developer in companies like Intel, HP, Dell, and Cisco.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header"><button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">Government Jobs</button></h2>
+                        <div id="c2" class="accordion-collapse collapse" data-bs-parent="#careerAccordion">
+                            <div class="accordion-body">Opportunities as Technical Assistants in BSNL, Railway IT divisions, Defense sectors, and state IT infrastructure departments.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header"><button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3">Higher Studies</button></h2>
+                        <div id="c3" class="accordion-collapse collapse" data-bs-parent="#careerAccordion">
+                            <div class="accordion-body">Lateral entry to B.Tech in Computer Science or Electronics, allowing deeper specialization in microchip design or advanced networking.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header"><button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4">Entrepreneurship</button></h2>
+                        <div id="c4" class="accordion-collapse collapse" data-bs-parent="#careerAccordion">
+                            <div class="accordion-body">Startups in IoT solutions, custom PC building, enterprise IT maintenance, or smart home installation businesses.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 gsap-reveal">
+                <h2 class="fw-bold mb-4">Industry Applications</h2>
+                <p class="text-muted mb-4">Hardware engineering is applied in vital sectors requiring robust physical infrastructure:</p>
+                <div class="row g-3">
+                    <div class="col-sm-6"><div class="p-3 border rounded bg-light hover-lift"><i class="bi bi-cloud-haze2 text-primary me-2"></i>Data Centers & Cloud</div></div>
+                    <div class="col-sm-6"><div class="p-3 border rounded bg-light hover-lift"><i class="bi bi-broadcast text-info me-2"></i>Telecommunications</div></div>
+                    <div class="col-sm-6"><div class="p-3 border rounded bg-light hover-lift"><i class="bi bi-house-gear text-success me-2"></i>Smart Homes & Automation</div></div>
+                    <div class="col-sm-6"><div class="p-3 border rounded bg-light hover-lift"><i class="bi bi-hospital text-danger me-2"></i>Medical Equipment IT</div></div>
+                    <div class="col-sm-6"><div class="p-3 border rounded bg-light hover-lift"><i class="bi bi-shield-check text-dark me-2"></i>Defense Hardware</div></div>
+                    <div class="col-sm-6"><div class="p-3 border rounded bg-light hover-lift"><i class="bi bi-robot text-warning me-2"></i>Industrial Robotics</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 8. Projects, 9. Achievements, 10. Future Scope -->
+<section class="section-padding bg-dark text-white">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-md-4 gsap-reveal">
+                <i class="bi bi-tools display-4 text-warning mb-3"></i>
+                <h3 class="fw-bold">Student Projects</h3>
+                <p class="text-secondary">Recent projects include an IoT-based smart agriculture monitoring system, an automated weather station using Raspberry Pi, and a custom-built low-cost server cluster for edge computing.</p>
+            </div>
+            <div class="col-md-4 gsap-reveal">
+                <i class="bi bi-award display-4 text-success mb-3"></i>
+                <h3 class="fw-bold">Achievements</h3>
+                <p class="text-secondary">Students frequently win state-level hardware hackathons, IoT design competitions, and have successfully implemented real-world IT infrastructure for local NGOs.</p>
+            </div>
+            <div class="col-md-4 gsap-reveal">
+                <i class="bi bi-binoculars display-4 text-info mb-3"></i>
+                <h3 class="fw-bold">Future Scope</h3>
+                <p class="text-secondary">As the demand for 5G infrastructure, edge computing hardware, and autonomous systems grows, our graduates are perfectly positioned to build the next generation of physical tech.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 11. Department Gallery -->
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center mb-5 gsap-reveal">
+            <h2 class="display-5 fw-bold">Department Gallery</h2>
+            <p class="lead text-muted">A glimpse into life at the Computer Hardware Engineering department</p>
+        </div>
+        <div class="row g-3">
+            <div class="col-md-4 gsap-reveal"><img src="https://images.unsplash.com/photo-1563207153-f4081c7e9927?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded shadow-sm hover-lift" alt="Motherboard"></div>
+            <div class="col-md-4 gsap-reveal"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded shadow-sm hover-lift" alt="Server"></div>
+            <div class="col-md-4 gsap-reveal"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded shadow-sm hover-lift" alt="IoT"></div>
+            <div class="col-md-6 gsap-reveal"><img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow-sm hover-lift" alt="Hardware Repair"></div>
+            <div class="col-md-6 gsap-reveal"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow-sm hover-lift" alt="Network Config"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}

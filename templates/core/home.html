@@ -1,0 +1,361 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | MODEL POLYTECHNIC COLLEGE KARUNAGAPPALLY{% endblock %}
+
+{% block extra_head %}
+<style>
+#hero { height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; color:#fff; position:relative; overflow:hidden; }
+.hero-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(13,110,253,0.6),rgba(0,0,0,0.7)); z-index:1; }
+.hero-content { position:relative; z-index:2; }
+.scroll-indicator { position:absolute; bottom:30px; left:50%; transform:translateX(-50%); z-index:2; animation:bounce 2s infinite; }
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-12px)} }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content px-3">
+    <p class="text-warning fw-bold text-uppercase tracking-wider mb-3" style="letter-spacing:.2em;font-size:.85rem;">IHRD · Govt. of Kerala · Est. 1997</p>
+    <h1 class="display-2 fw-bold mb-3">MODEL POLYTECHNIC COLLEGE<br><span class="text-warning">KARUNAGAPPALLY</span></h1>
+    <p class="hero-sub mb-5">Empowering Future Engineers Since 1997</p>
+    <div class="d-flex flex-wrap gap-3 justify-content-center">
+      <a href="{% url 'admissions:enquiry' %}" class="btn btn-primary btn-lg rounded-pill px-5 fw-bold shadow">Apply Now <i class="bi bi-arrow-right ms-1"></i></a>
+      <a href="{% url 'departments:list' %}" class="btn btn-outline-light btn-lg rounded-pill px-5 fw-bold">Explore Departments</a>
+    </div>
+    <div class="d-flex flex-wrap gap-4 justify-content-center mt-5">
+      <div class="text-center"><div class="fw-bold fs-4">AICTE</div><div class="small opacity-75">Approved</div></div>
+      <div class="vr opacity-25"></div>
+      <div class="text-center"><div class="fw-bold fs-4">BTE</div><div class="small opacity-75">Affiliated</div></div>
+      <div class="vr opacity-25"></div>
+      <div class="fw-bold fs-4 text-center"><div>5</div><div class="small opacity-75">Departments</div></div>
+    </div>
+  </div>
+  <div class="scroll-indicator"><i class="bi bi-chevron-double-down fs-3 text-white opacity-75"></i></div>
+</section>
+
+<!-- Stats Bar -->
+<section class="py-4 bg-primary text-white">
+  <div class="container">
+    <div class="row text-center g-3">
+      <div class="col-6 col-md-3 gsap-reveal">
+        <div class="display-5 fw-bold counter" data-target="25">0</div>
+        <div class="small opacity-75">Years of Excellence</div>
+      </div>
+      <div class="col-6 col-md-3 gsap-reveal">
+        <div class="display-5 fw-bold counter" data-target="3000">0</div>
+        <div class="small opacity-75">Alumni Worldwide</div>
+      </div>
+      <div class="col-6 col-md-3 gsap-reveal">
+        <div class="display-5 fw-bold counter" data-target="85">0</div>
+        <div class="small opacity-75">% Placement Rate</div>
+      </div>
+      <div class="col-6 col-md-3 gsap-reveal">
+        <div class="display-5 fw-bold counter" data-target="300">0</div>
+        <div class="small opacity-75">Annual Intake</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section-padding" id="about">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 gsap-reveal">
+        <h6 class="text-primary fw-bold tracking-wider text-uppercase mb-3">About the Institution</h6>
+        <h2 class="display-5 fw-bold mb-4">A Legacy of Technical Excellence</h2>
+        <p class="lead text-muted mb-4">Model Polytechnic College Karunagappally, established in 1997, is a premier technical institution managed by the Institute of Human Resources Development (IHRD), Government of Kerala.</p>
+        <p class="text-muted mb-4">Approved by AICTE and affiliated to the Board of Technical Education Kerala, we have been consistently producing skilled diploma engineers who excel in industry and higher education. Our modern labs, dedicated faculty, and strong industry connections set us apart.</p>
+        <div class="row g-3 mb-4">
+          <div class="col-6"><div class="p-3 bg-light rounded-3 text-center hover-lift"><i class="bi bi-building-check text-primary fs-3 mb-2"></i><div class="fw-bold">Govt. Institution</div></div></div>
+          <div class="col-6"><div class="p-3 bg-light rounded-3 text-center hover-lift"><i class="bi bi-patch-check-fill text-success fs-3 mb-2"></i><div class="fw-bold">AICTE Approved</div></div></div>
+        </div>
+        <a href="{% url 'departments:list' %}" class="btn btn-outline-primary rounded-pill px-4">Explore Departments <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+      <div class="col-lg-6 gsap-reveal">
+        <div class="position-relative">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" alt="MPTC Campus" class="img-fluid rounded-4 shadow-lg w-100" style="height:400px;object-fit:cover;">
+          <div class="position-absolute top-0 start-0 m-4 bg-primary text-white p-3 rounded-3 shadow">
+            <div class="fw-bold fs-3">1997</div><div class="small">Established</div>
+          </div>
+          <div class="position-absolute bottom-0 end-0 m-4 bg-white text-dark p-3 rounded-3 shadow">
+            <div class="fw-bold text-primary fs-4">IHRD</div><div class="small">Govt. of Kerala</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vision & Mission -->
+<section class="section-padding bg-light">
+  <div class="container">
+    <div class="text-center mb-5 gsap-reveal">
+      <h2 class="display-5 fw-bold">Vision & Mission</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 gsap-reveal">
+        <div class="glass-card p-5 h-100 text-center" style="background:linear-gradient(135deg,#0d6efd,#0a58ca);color:#fff;">
+          <i class="bi bi-eye-fill fs-1 text-warning mb-3"></i>
+          <h3 class="fw-bold mb-3">Our Vision</h3>
+          <p class="opacity-90">To emerge as a premier technical institution nurturing competent professionals who contribute effectively to the technological and socio-economic development of society.</p>
+        </div>
+      </div>
+      <div class="col-md-6 gsap-reveal">
+        <div class="glass-card p-5 h-100 text-center border-2 border-primary">
+          <i class="bi bi-bullseye fs-1 text-primary mb-3"></i>
+          <h3 class="fw-bold mb-3">Our Mission</h3>
+          <p class="text-muted">To provide quality technical education through innovative teaching, equip students with industry-relevant skills, and instill ethical values for a rapidly changing global landscape.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Departments -->
+<section class="section-padding">
+  <div class="container">
+    <div class="text-center mb-5 gsap-reveal">
+      <h6 class="text-primary fw-bold tracking-wider text-uppercase mb-2">Academics</h6>
+      <h2 class="display-5 fw-bold">Our Departments</h2>
+      <p class="lead text-muted">Five specialized engineering disciplines for modern industry needs</p>
+    </div>
+    <div class="row g-4">
+      {% for dept in depts %}
+      <div class="col-lg-4 col-md-6 gsap-reveal">
+        <div class="card h-100 border-0 shadow-sm hover-lift">
+          <div class="p-4 text-center">
+            <div class="bg-primary bg-opacity-10 rounded-3 p-3 d-inline-block mb-3"><i class="{{ dept.icon }} fs-1 text-primary"></i></div>
+            <h5 class="fw-bold mb-2">{{ dept.name }}</h5>
+            <p class="text-muted small mb-3">{{ dept.desc }}</p>
+            <a href="{{ dept.url }}" class="btn btn-outline-primary rounded-pill btn-sm px-4">Explore</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="section-padding bg-light overflow-hidden">
+  <div class="container">
+    <div class="text-center mb-5 gsap-reveal">
+      <h2 class="display-5 fw-bold">Our Journey</h2>
+      <p class="text-muted">Milestones since 1997</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item gsap-reveal">
+        <div class="timeline-dot"></div>
+        <h5 class="fw-bold text-primary">1997</h5>
+        <h6>College Established</h6>
+        <p class="text-muted small">Founded under IHRD with 3 inaugural diploma programmes.</p>
+      </div>
+      <div class="timeline-item gsap-reveal">
+        <div class="timeline-dot"></div>
+        <h5 class="fw-bold text-primary">2002</h5>
+        <h6>AICTE Approval</h6>
+        <p class="text-muted small">Received full AICTE approval for all engineering branches.</p>
+      </div>
+      <div class="timeline-item gsap-reveal">
+        <div class="timeline-dot"></div>
+        <h5 class="fw-bold text-primary">2010</h5>
+        <h6>Campus Expansion</h6>
+        <p class="text-muted small">Inauguration of new academic block and advanced labs.</p>
+      </div>
+      <div class="timeline-item gsap-reveal">
+        <div class="timeline-dot"></div>
+        <h5 class="fw-bold text-primary">2020</h5>
+        <h6>Smart Campus Initiative</h6>
+        <p class="text-muted small">Digital classrooms, smart labs and online learning infrastructure.</p>
+      </div>
+      <div class="timeline-item gsap-reveal">
+        <div class="timeline-dot"></div>
+        <h5 class="fw-bold text-primary">2026</h5>
+        <h6>Present Day</h6>
+        <p class="text-muted small">State-of-the-art campus with 85%+ placement record.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Facilities -->
+<section class="section-padding text-white" style="background:linear-gradient(rgba(0,0,0,0.82),rgba(0,0,0,0.82)),url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80') center/cover fixed;">
+  <div class="container">
+    <div class="text-center mb-5 gsap-reveal">
+      <h2 class="display-5 fw-bold">Campus Facilities</h2>
+      <p class="opacity-75">World-class infrastructure for premium learning</p>
+    </div>
+    <div class="row g-4 text-center">
+      {% for f in facilities %}
+      <div class="col-6 col-md-3 gsap-reveal">
+        <div class="glass-card p-4 h-100 hover-lift" style="background:rgba(255,255,255,0.06);">
+          <i class="{{ f.icon }} fs-1 text-primary mb-3"></i>
+          <h6 class="fw-bold">{{ f.name }}</h6>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Placements -->
+<section class="section-padding">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6 gsap-reveal">
+        <h6 class="text-primary fw-bold tracking-wider text-uppercase mb-2">Career</h6>
+        <h2 class="display-5 fw-bold mb-4">Placement & Career Development</h2>
+        <p class="text-muted mb-4">Our dedicated Training & Placement Cell connects students with top companies through campus drives, internships, and continuous skill development programmes.</p>
+        <div class="row g-3 mb-4">
+          <div class="col-6"><div class="stat-card"><div class="stat-num counter" data-target="85">0</div><div class="small mt-1">% Placement Rate</div></div></div>
+          <div class="col-6"><div class="stat-card" style="background:#198754;"><div class="stat-num counter" data-target="50">0</div><div class="small mt-1">Top Recruiters</div></div></div>
+        </div>
+        <a href="{% url 'placements:list' %}" class="btn btn-primary rounded-pill px-4">View Placements <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+      <div class="col-lg-6 gsap-reveal">
+        <div class="glass-card p-4 bg-light border-0 shadow-sm">
+          <h5 class="fw-bold mb-3">Top Recruiting Companies</h5>
+          <div class="d-flex flex-wrap gap-2">
+            {% for c in recruiters %}<span class="badge bg-white text-dark border py-2 px-3 fs-6 shadow-sm">{{ c }}</span>{% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section class="section-padding bg-dark text-white">
+  <div class="container">
+    <div class="text-center mb-5 gsap-reveal">
+      <h6 class="text-warning fw-bold tracking-wider text-uppercase mb-2">Innovation</h6>
+      <h2 class="display-5 fw-bold">Student Project Showcase</h2>
+    </div>
+    <div class="row g-4">
+      {% for p in projects %}
+      <div class="col-md-4 gsap-reveal">
+        <div class="glass-card p-4 h-100 hover-lift" style="background:rgba(255,255,255,0.05);">
+          <i class="{{ p.icon }} fs-1 text-primary mb-3"></i>
+          <h5 class="fw-bold">{{ p.name }}</h5>
+          <p class="text-secondary small">{{ p.desc }}</p>
+          <span class="badge bg-primary">{{ p.dept }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Events Preview -->
+<section class="section-padding bg-light">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end mb-5 gsap-reveal flex-wrap gap-3">
+      <div>
+        <h6 class="text-primary fw-bold tracking-wider text-uppercase mb-2">Campus Life</h6>
+        <h2 class="display-5 fw-bold">Latest Events</h2>
+      </div>
+      <a href="{% url 'events:list' %}" class="btn btn-outline-primary rounded-pill px-4">View All Events</a>
+    </div>
+    <div class="row g-4">
+      {% for e in events_preview %}
+      <div class="col-md-4 gsap-reveal">
+        <div class="card border-0 shadow-sm hover-lift h-100">
+          <div class="position-relative overflow-hidden" style="height:200px;">
+            <img src="{{ e.img }}" class="w-100 h-100" style="object-fit:cover;" alt="{{ e.title }}">
+            <span class="badge bg-primary position-absolute top-0 start-0 m-2">{{ e.tag }}</span>
+          </div>
+          <div class="card-body">
+            <h5 class="fw-bold mb-1">{{ e.title }}</h5>
+            <p class="text-primary small mb-2"><i class="bi bi-calendar3 me-1"></i>{{ e.date }} &nbsp; <i class="bi bi-geo-alt me-1"></i>{{ e.venue }}</p>
+            <p class="text-muted small">{{ e.desc }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Preview -->
+<section class="section-padding">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end mb-4 gsap-reveal flex-wrap gap-3">
+      <div>
+        <h6 class="text-primary fw-bold tracking-wider text-uppercase mb-2">Visuals</h6>
+        <h2 class="display-5 fw-bold">Campus Gallery</h2>
+      </div>
+      <a href="{% url 'gallery:list' %}" class="btn btn-outline-primary rounded-pill px-4">Full Gallery</a>
+    </div>
+    <div class="row g-2 gsap-reveal">
+      <div class="col-md-6"><img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=700&q=80" class="img-fluid rounded-4 hover-lift w-100" style="height:280px;object-fit:cover;" alt="Campus"></div>
+      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" class="img-fluid rounded-4 hover-lift w-100 mb-2" style="height:135px;object-fit:cover;" alt="Lab"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" class="img-fluid rounded-4 hover-lift w-100" style="height:135px;object-fit:cover;" alt="Event"></div>
+      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" class="img-fluid rounded-4 hover-lift w-100 mb-2" style="height:135px;object-fit:cover;" alt="Hackathon"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=400&q=80" class="img-fluid rounded-4 hover-lift w-100" style="height:135px;object-fit:cover;" alt="Electronics"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose MPTC -->
+<section class="section-padding text-white" style="background:var(--bs-primary);">
+  <div class="container">
+    <div class="text-center mb-5 gsap-reveal">
+      <h2 class="display-5 fw-bold">Why Choose MPTC?</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 gsap-reveal">
+        <div class="text-center p-4 rounded-4 hover-lift h-100" style="background:rgba(255,255,255,0.1);">
+          <i class="bi bi-shield-check fs-1 text-warning mb-3"></i>
+          <h5 class="fw-bold">Government Backed</h5>
+          <p class="opacity-75 small">Managed by IHRD, Government of Kerala — guaranteeing quality, transparency and credibility.</p>
+        </div>
+      </div>
+      <div class="col-md-4 gsap-reveal">
+        <div class="text-center p-4 rounded-4 hover-lift h-100" style="background:rgba(255,255,255,0.1);">
+          <i class="bi bi-briefcase-fill fs-1 text-warning mb-3"></i>
+          <h5 class="fw-bold">Strong Placements</h5>
+          <p class="opacity-75 small">85%+ placement rate with 50+ top recruiting partners visiting campus annually.</p>
+        </div>
+      </div>
+      <div class="col-md-4 gsap-reveal">
+        <div class="text-center p-4 rounded-4 hover-lift h-100" style="background:rgba(255,255,255,0.1);">
+          <i class="bi bi-mortarboard-fill fs-1 text-warning mb-3"></i>
+          <h5 class="fw-bold">Lateral Entry to B.Tech</h5>
+          <p class="opacity-75 small">Diploma holders can directly join 2nd year of B.Tech through lateral entry scheme.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Admissions CTA -->
+<section class="section-padding">
+  <div class="container">
+    <div class="glass-card p-5 text-center gsap-reveal shadow-lg" style="background:linear-gradient(135deg,rgba(13,110,253,0.08),rgba(255,193,7,0.08));">
+      <i class="bi bi-mortarboard fs-1 text-primary mb-3"></i>
+      <h2 class="display-5 fw-bold mb-3">Begin Your Engineering Journey</h2>
+      <p class="lead text-muted mb-4">Admissions for 2026-27 are now open. Join 25+ years of technical excellence at MPTC Karunagappally.</p>
+      <a href="{% url 'admissions:enquiry' %}" class="btn btn-primary btn-lg rounded-pill px-5 shadow fw-bold">Apply for Admission <i class="bi bi-arrow-right ms-2"></i></a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof VANTA !== 'undefined') {
+        VANTA.NET({
+            el: "#hero",
+            mouseControls: true, touchControls: true,
+            color: 0x3b82f6, backgroundColor: 0x0d1117,
+            points: 12, maxDistance: 22, spacing: 18, scale: 1
+        });
+    }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5 py-5">
+    <div class="text-center mb-5 gsap-reveal">
+        <h6 class="text-primary fw-bold text-uppercase tracking-wider">Academics</h6>
+        <h1 class="display-4 fw-bold">Our Departments</h1>
+        <p class="lead text-muted">Explore our specialized engineering disciplines tailored for modern industry needs.</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- Computer Engineering -->
+        <div class="col-lg-4 col-md-6 gsap-reveal">
+            <div class="card h-100 hover-lift border-0 shadow-sm glass-card">
+                <div class="card-body p-4 text-center">
+                    <i class="bi bi-laptop fs-1 text-primary mb-3"></i>
+                    <h4 class="card-title fw-bold mb-3">Computer Engineering</h4>
+                    <p class="text-muted">Master Programming, Web Development, DB Systems, and Software Engineering.</p>
+                    <a href="{% url 'departments:ce' %}" class="btn btn-outline-primary w-100 rounded-pill">Explore Department</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Computer Hardware Engineering -->
+        <div class="col-lg-4 col-md-6 gsap-reveal">
+            <div class="card h-100 hover-lift border-0 shadow-sm glass-card">
+                <div class="card-body p-4 text-center">
+                    <i class="bi bi-cpu fs-1 text-primary mb-3"></i>
+                    <h4 class="card-title fw-bold mb-3">Computer Hardware Engineering</h4>
+                    <p class="text-muted">Focus on Hardware Maintenance, Embedded Systems, and Networking.</p>
+                    <a href="{% url 'departments:che' %}" class="btn btn-outline-primary w-100 rounded-pill">Explore Department</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Electronics Engineering -->
+        <div class="col-lg-4 col-md-6 gsap-reveal">
+            <div class="card h-100 hover-lift border-0 shadow-sm glass-card">
+                <div class="card-body p-4 text-center">
+                    <i class="bi bi-motherboard fs-1 text-primary mb-3"></i>
+                    <h4 class="card-title fw-bold mb-3">Electronics Engineering</h4>
+                    <p class="text-muted">Dive deep into Electronic Circuits, PCB Design, and Instrumentation.</p>
+                    <a href="{% url 'departments:ee' %}" class="btn btn-outline-primary w-100 rounded-pill">Explore Department</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Electronics and Communication Engineering -->
+        <div class="col-lg-4 col-md-6 gsap-reveal">
+            <div class="card h-100 hover-lift border-0 shadow-sm glass-card">
+                <div class="card-body p-4 text-center">
+                    <i class="bi bi-broadcast fs-1 text-primary mb-3"></i>
+                    <h4 class="card-title fw-bold mb-3">Electronics & Communication</h4>
+                    <p class="text-muted">Explore Communication Systems, Wireless Tech, and Signal Processing.</p>
+                    <a href="{% url 'departments:ece' %}" class="btn btn-outline-primary w-100 rounded-pill">Explore Department</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Electrical and Electronics Engineering -->
+        <div class="col-lg-4 col-md-6 gsap-reveal">
+            <div class="card h-100 hover-lift border-0 shadow-sm glass-card">
+                <div class="card-body p-4 text-center">
+                    <i class="bi bi-lightning-charge fs-1 text-primary mb-3"></i>
+                    <h4 class="card-title fw-bold mb-3">Electrical & Electronics</h4>
+                    <p class="text-muted">Learn Power Systems, Industrial Automation, and Renewable Energy.</p>
+                    <a href="{% url 'departments:eee' %}" class="btn btn-outline-primary w-100 rounded-pill">Explore Department</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

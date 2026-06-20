@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Admissions 2026-27 | MPTC Karunagappally{% endblock %}
+
+{% block content %}
+<section class="dept-hero" style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80');">
+  <div class="dept-hero-content px-3 gsap-reveal">
+    <i class="bi bi-mortarboard-fill display-1 text-warning mb-3"></i>
+    <h1 class="display-3 fw-bold">Admissions 2026-27</h1>
+    <p class="lead">Begin Your Engineering Journey at MPTC Karunagappally</p>
+  </div>
+</section>
+
+<div class="container py-5">
+  <div class="row g-5">
+    <!-- Form -->
+    <div class="col-lg-7 gsap-reveal">
+      <div class="glass-card p-5 shadow-sm border-0">
+        <h3 class="fw-bold mb-1">Admission Enquiry</h3>
+        <p class="text-muted mb-4">Fill the form below and our admissions team will contact you within 24 hours.</p>
+        {% if messages %}
+          {% for msg in messages %}
+          <div class="alert alert-success rounded-3">{{ msg }}</div>
+          {% endfor %}
+        {% endif %}
+        <form method="post" novalidate>
+          {% csrf_token %}
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label fw-semibold">Student Name *</label>
+              <input type="text" name="student_name" class="form-control form-control-lg bg-light border-0 rounded-3" placeholder="Full Name" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold">Email Address *</label>
+              <input type="email" name="email" class="form-control form-control-lg bg-light border-0 rounded-3" placeholder="email@example.com" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold">Phone Number *</label>
+              <input type="tel" name="phone" class="form-control form-control-lg bg-light border-0 rounded-3" placeholder="+91 XXXXXXXXXX" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold">Course Interested *</label>
+              <select name="course_interested" class="form-select form-select-lg bg-light border-0 rounded-3" required>
+                <option value="">Select Department</option>
+                <option>Computer Engineering</option>
+                <option>Computer Hardware Engineering</option>
+                <option>Electronics Engineering</option>
+                <option>Electronics & Communication Engineering</option>
+                <option>Electrical & Electronics Engineering</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label fw-semibold">Message / Query</label>
+              <textarea name="message" class="form-control bg-light border-0 rounded-3" rows="4" placeholder="Any specific questions or requirements..."></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary btn-lg rounded-pill w-100 fw-bold">Submit Enquiry <i class="bi bi-arrow-right ms-2"></i></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Info Panel -->
+    <div class="col-lg-5">
+      <div class="mb-4 gsap-reveal">
+        <h4 class="fw-bold mb-3">Admission Highlights</h4>
+        <ul class="list-unstyled">
+          <li class="d-flex gap-3 mb-3"><i class="bi bi-check-circle-fill text-success fs-5 flex-shrink-0"></i><span>3-year Diploma Programme in Engineering</span></li>
+          <li class="d-flex gap-3 mb-3"><i class="bi bi-check-circle-fill text-success fs-5 flex-shrink-0"></i><span>AICTE Approved & BTE Kerala Affiliated</span></li>
+          <li class="d-flex gap-3 mb-3"><i class="bi bi-check-circle-fill text-success fs-5 flex-shrink-0"></i><span>Merit-based admission through DHSE/SSLC results</span></li>
+          <li class="d-flex gap-3 mb-3"><i class="bi bi-check-circle-fill text-success fs-5 flex-shrink-0"></i><span>Government fee structure — affordable education</span></li>
+          <li class="d-flex gap-3 mb-3"><i class="bi bi-check-circle-fill text-success fs-5 flex-shrink-0"></i><span>SC/ST/OBC reservations as per Government norms</span></li>
+          <li class="d-flex gap-3 mb-3"><i class="bi bi-check-circle-fill text-success fs-5 flex-shrink-0"></i><span>Lateral entry to B.Tech after Diploma</span></li>
+        </ul>
+      </div>
+      <div class="glass-card p-4 bg-primary text-white gsap-reveal">
+        <h5 class="fw-bold mb-3"><i class="bi bi-info-circle me-2"></i>Key Dates 2026-27</h5>
+        <ul class="list-unstyled small mb-0">
+          <li class="mb-2"><i class="bi bi-calendar-event me-2"></i>Application Opens: June 2026</li>
+          <li class="mb-2"><i class="bi bi-calendar-event me-2"></i>Last Date: July 2026</li>
+          <li class="mb-2"><i class="bi bi-calendar-event me-2"></i>Merit List: August 2026</li>
+          <li><i class="bi bi-calendar-event me-2"></i>Classes Begin: September 2026</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

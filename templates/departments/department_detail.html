@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow border-0">
+        <div class="card-body p-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="text-primary m-0">{{ department.name }}</h1>
+                <span class="badge bg-secondary fs-5">{{ department.code }}</span>
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-8">
+                    <h4>About the Department</h4>
+                    <p class="lead">{{ department.description }}</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-light p-4 rounded text-center">
+                        <h5 class="text-muted mb-3">Head of Department</h5>
+                        <h4>{{ department.hod_name }}</h4>
+                        <hr>
+                        <p class="mb-0">Established: <strong>{{ department.established_year }}</strong></p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="mb-4">Faculty Members</h3>
+            <div class="row g-4">
+                {% for faculty in department.faculties.all %}
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            {% if faculty.image %}
+                                <img src="{{ faculty.image.url }}" class="rounded-circle mb-3" width="100" height="100" style="object-fit: cover;">
+                            {% else %}
+                                <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 100px; height: 100px;">
+                                    <i class="bi bi-person text-secondary fs-1"></i>
+                                </div>
+                            {% endif %}
+                            <h5>{{ faculty.name }}</h5>
+                            <p class="text-muted mb-1">{{ faculty.designation }}</p>
+                            <small>{{ faculty.qualification }}</small>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-muted">No faculty members listed yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Campus Gallery | MPTC Karunagappally{% endblock %}
+
+{% block extra_head %}
+<style>
+.filter-btn.active { background: var(--bs-primary); color: #fff; border-color: var(--bs-primary); }
+.gallery-item { display: none; }
+.gallery-item.show { display: block; }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="dept-hero" style="background-image:url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80');">
+  <div class="dept-hero-content px-3 gsap-reveal">
+    <i class="bi bi-images display-1 text-warning mb-3"></i>
+    <h1 class="display-3 fw-bold">Campus Gallery</h1>
+    <p class="lead">Explore life at MODEL POLYTECHNIC COLLEGE KARUNAGAPPALLY</p>
+  </div>
+</section>
+
+<div class="container py-5">
+  <!-- Filter Tabs -->
+  <div class="d-flex flex-wrap gap-2 justify-content-center mb-5 gsap-reveal">
+    <button class="btn btn-outline-primary rounded-pill px-4 filter-btn active" data-filter="all">All</button>
+    <button class="btn btn-outline-primary rounded-pill px-4 filter-btn" data-filter="campus">Campus</button>
+    <button class="btn btn-outline-primary rounded-pill px-4 filter-btn" data-filter="labs">Laboratories</button>
+    <button class="btn btn-outline-primary rounded-pill px-4 filter-btn" data-filter="events">Events</button>
+    <button class="btn btn-outline-primary rounded-pill px-4 filter-btn" data-filter="workshop">Workshops</button>
+    <button class="btn btn-outline-primary rounded-pill px-4 filter-btn" data-filter="students">Students</button>
+  </div>
+
+  <!-- Masonry Grid -->
+  <div class="masonry-grid" id="galleryGrid">
+
+    <div class="masonry-item gallery-item show" data-cat="campus">
+      <a href="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80" data-lightbox="gallery" data-title="Main Campus Building">
+        <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80" alt="Campus" loading="lazy">
+        <div class="gallery-overlay text-white"><h6 class="fw-bold mb-0">Main Campus</h6><small>Infrastructure</small></div>
+      </a>
+    </div>
+
+    <div class="masonry-item gallery-item show" data-cat="labs">
+      <a href="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80" data-lightbox="gallery" data-title="Computer Programming Lab">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Lab" loading="lazy">
+        <div class="gallery-overlay text-white"><h6 class="fw-bold mb-0">Programming Lab</h6><small>Laboratories</small></div>
+      </a>
+    </div>
+
+    <div class="masonry-item gallery-item show" data-cat="events">
+      <a href="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80" data-lightbox="gallery" data-title="TechFest 2025 Seminar">
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Event" loading="lazy">
+        <div class="gallery-overlay text-white"><h6 class="fw-bold mb-0">TechFest Seminar</h6><small>Events</small></div>
+      </a>
+    </div>
+
+    <div class="masonry-item gallery-item show" data-cat="labs">
+      <a href="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80" data-lightbox="gallery" data-title="Electronics Testing Lab">
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80" alt="Electronics" loading="lazy">
+        <div class="gallery-overlay text-white"><h6 class="fw-bold mb-0">Electronics Lab</h6><small>Laboratories</small></div>
+      </a>
+    </div>
+
+    <div class="masonry-item gallery-item show" data-cat="students">
+      <a href="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" data-lightbox="gallery" data-title="Student Group Activity">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Students" loading="lazy">
+        <div class="gallery-overlay text-white"><h6 class="fw-bold mb-0">Student Activity</h6><small>Campus Life</small></div>
+      </a>
+    </div>
+
+    <div class="masonry-item gallery-item show" data-cat="events">
+      <a href="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" data-lightbox="gallery" data-title="Hackathon 2025">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Hackathon" loading="lazy">
+        <div class="gallery-overlay text-white"><h6 class="fw-bold mb-0">Hackathon 2025</h6><small>Events</small></div>
+      </a>
+    </div>
+
+    <div class="masonry-item gallery-item show" data-cat="workshop">
+      <a href="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80" data-lightbox="gallery" data-title="Robotics Workshop">
+        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80" alt="Robotics" loading="lazy">
+        <div class="gallery-overlay text-white"><h6 class="fw-bold mb-0">Robotics Workshop</h6><small>Workshops</small></div>
+      </a>
+    </div>
+
+    <div class="masonry-item gallery-item show" data-cat="labs">
+      <a href="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80" data-lightbox="gallery" data-title="Networking Infrastructure Lab">
+        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80" alt="Network Lab" loading="lazy">
+        <div class="gallery-overlay text-white"><h6 class="fw-bold mb-0">Network Lab</h6><small>Laboratories</small></div>
+      </a>
+    </div>
+
+    <div class="masonry-item gallery-item show" data-cat="campus">
+      <a href="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80" data-lightbox="gallery" data-title="Library & Reading Hall">
+        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80" alt="Library" loading="lazy">
+        <div class="gallery-overlay text-white"><h6 class="fw-bold mb-0">Central Library</h6><small>Infrastructure</small></div>
+      </a>
+    </div>
+
+    <div class="masonry-item gallery-item show" data-cat="students">
+      <a href="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80" data-lightbox="gallery" data-title="Graduation Day">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80" alt="Graduation" loading="lazy">
+        <div class="gallery-overlay text-white"><h6 class="fw-bold mb-0">Graduation Day</h6><small>Campus Life</small></div>
+      </a>
+    </div>
+
+    <div class="masonry-item gallery-item show" data-cat="workshop">
+      <a href="https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&w=1200&q=80" data-lightbox="gallery" data-title="PCB Soldering Workshop">
+        <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&w=600&q=80" alt="Workshop" loading="lazy">
+        <div class="gallery-overlay text-white"><h6 class="fw-bold mb-0">PCB Workshop</h6><small>Workshops</small></div>
+      </a>
+    </div>
+
+    <div class="masonry-item gallery-item show" data-cat="labs">
+      <a href="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1200&q=80" data-lightbox="gallery" data-title="Electronics Circuit Lab">
+        <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=600&q=80" alt="Circuit Lab" loading="lazy">
+        <div class="gallery-overlay text-white"><h6 class="fw-bold mb-0">Circuit Lab</h6><small>Laboratories</small></div>
+      </a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      if (filter === 'all' || item.dataset.cat === filter) {
+        item.classList.add('show');
+      } else {
+        item.classList.remove('show');
+      }
+    });
+  });
+});
+</script>
+{% endblock %}
