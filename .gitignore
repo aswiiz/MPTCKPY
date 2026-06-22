@@ -15,7 +15,8 @@ env/
 *.log
 local_settings.py
 db.sqlite3
-media/
+media/*
+!media/local_images/
 staticfiles/
 
 # Environment variables
