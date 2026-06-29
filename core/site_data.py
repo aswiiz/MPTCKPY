@@ -90,6 +90,50 @@ GALLERY_CATEGORIES = [
     "Events",
 ]
 
+# Verified recruiters — official list only. DO NOT add names not listed here.
+RECRUITERS = [
+    "HL Mando",
+    "Experion Technologies",
+    "Logskim Solutions Pvt. Ltd.",
+    "Centum Electronics",
+    "Hyundai",
+    "TVS Training & Services",
+    "Ashok Leyland",
+    "LVS Euremair Fastening Ltd.",
+    "TVS Sundaram Fasteners Ltd.",
+    "Motherson",
+    "UEM",
+    "MRF",
+    "Metro",
+    "Efficacy AMS",
+    "JBM Auto",
+    "Persol India",
+]
+
+# Verified placement statistics — official figures only.
+PLACEMENT_STATS = {
+    "total_companies": "90+",
+    "placement_offers": 515,
+    "campus_drives": 136,
+    "students_placed": 236,
+    "by_dept_placed": {
+        "Computer Engineering": 35,
+        "Computer Hardware Engineering": 31,
+        "Electronics & Communication Engineering": 40,
+        "Electronics Engineering": 32,
+        "Electrical & Electronics Engineering": 53,
+        "Mechanical Engineering": 45,
+    },
+    "by_dept_offers": {
+        "Computer Engineering": 93,
+        "Computer Hardware Engineering": 86,
+        "Electronics & Communication Engineering": 67,
+        "Electronics Engineering": 70,
+        "Electrical & Electronics Engineering": 107,
+        "Mechanical Engineering": 92,
+    },
+}
+
 
 def local_media_images(limit=None):
     media_root = Path(settings.MEDIA_ROOT)

@@ -16,10 +16,10 @@
 
   <!-- Stats -->
   <div class="row g-4 mb-5">
-    <div class="col-6 col-md-3 gsap-reveal"><div class="stat-card"><div class="stat-num counter" data-target="85">0</div><div>% Placement Rate</div></div></div>
-    <div class="col-6 col-md-3 gsap-reveal"><div class="stat-card" style="background:#198754;"><div class="stat-num counter" data-target="50">0</div><div>Recruiting Partners</div></div></div>
-    <div class="col-6 col-md-3 gsap-reveal"><div class="stat-card" style="background:#fd7e14;"><div class="stat-num counter" data-target="500">0</div><div>Students Placed</div></div></div>
-    <div class="col-6 col-md-3 gsap-reveal"><div class="stat-card" style="background:#6f42c1;"><div class="stat-num counter" data-target="25">0</div><div>Years of Placement</div></div></div>
+    <div class="col-6 col-md-3 gsap-reveal"><div class="stat-card"><div class="stat-num counter" data-target="{{ stats.students_placed }}">0</div><div>Students Placed</div></div></div>
+    <div class="col-6 col-md-3 gsap-reveal"><div class="stat-card" style="background:#198754;"><div class="stat-num counter" data-target="{{ stats.campus_drives }}">0</div><div>Campus Drives</div></div></div>
+    <div class="col-6 col-md-3 gsap-reveal"><div class="stat-card" style="background:#fd7e14;"><div class="stat-num counter" data-target="{{ stats.placement_offers }}">0</div><div>Placement Offers</div></div></div>
+    <div class="col-6 col-md-3 gsap-reveal"><div class="stat-card" style="background:#6f42c1;"><div class="stat-num">{{ stats.total_companies }}</div><div>Companies Visited</div></div></div>
   </div>
 
   <!-- About Placement Cell -->
@@ -27,7 +27,7 @@
     <div class="col-lg-6 gsap-reveal">
       <h2 class="fw-bold mb-4">About the Placement Cell</h2>
       <p class="text-muted">The Training and Placement Cell at Model Polytechnic College Karunagappally bridges students with top-tier companies through campus drives, internships, and comprehensive skill development programmes. Our dedicated team of coordinators works year-round to ensure every student has the opportunity to launch a rewarding career.</p>
-      <p class="text-muted">We partner with industry giants and emerging startups alike, offering students a diverse range of career options in IT, manufacturing, service, and government sectors.</p>
+      <p class="text-muted">We partner with industry leaders and growing companies, offering students diverse career options in manufacturing, electronics, IT, and service sectors.</p>
       <ul class="list-unstyled mt-4">
         <li class="mb-3 d-flex gap-3"><i class="bi bi-check-circle-fill text-success fs-5 flex-shrink-0"></i><span>On-campus and off-campus recruitment drives</span></li>
         <li class="mb-3 d-flex gap-3"><i class="bi bi-check-circle-fill text-success fs-5 flex-shrink-0"></i><span>Aptitude, technical & soft skills training</span></li>
@@ -53,23 +53,23 @@
   </div>
 
   <!-- Recent Drives -->
+  {% if recent_drives %}
   <div class="mb-5 gsap-reveal">
     <h3 class="fw-bold mb-4">Recent Recruitment Drives</h3>
     <div class="table-responsive rounded-3 shadow-sm">
       <table class="table table-hover mb-0 align-middle">
         <thead class="table-primary">
-          <tr><th>Company</th><th>Date</th><th>Department</th><th>Package</th><th>Status</th></tr>
+          <tr><th>Company</th><th>Date</th><th>Department</th><th>Status</th></tr>
         </thead>
         <tbody>
-          <tr><td class="fw-bold">TCS iON</td><td>March 2026</td><td>Computer Engineering</td><td>₹3.2 LPA</td><td><span class="badge bg-success">Completed</span></td></tr>
-          <tr><td class="fw-bold">UST Global</td><td>February 2026</td><td>Computer Engg. / ECE</td><td>₹3.5 LPA</td><td><span class="badge bg-success">Completed</span></td></tr>
-          <tr><td class="fw-bold">IBS Software</td><td>January 2026</td><td>All Departments</td><td>₹3.0 LPA</td><td><span class="badge bg-success">Completed</span></td></tr>
-          <tr><td class="fw-bold">Infosys BPM</td><td>October 2025</td><td>Computer Engg.</td><td>₹2.8 LPA</td><td><span class="badge bg-success">Completed</span></td></tr>
-          <tr><td class="fw-bold">Wipro</td><td>Oct 2026</td><td>All Departments</td><td>₹3.0+ LPA</td><td><span class="badge bg-warning text-dark">Upcoming</span></td></tr>
+          {% for drive in recent_drives %}
+          <tr><td class="fw-bold">{{ drive.company }}</td><td>{{ drive.date }}</td><td>{{ drive.dept }}</td><td><span class="badge bg-{{ drive.status_color }}">{{ drive.status }}</span></td></tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
   </div>
+  {% endif %}
 
   <!-- CTA -->
   <div class="text-center gsap-reveal py-5 glass-card bg-primary text-white rounded-4 p-5">

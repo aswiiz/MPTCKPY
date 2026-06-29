@@ -31,7 +31,7 @@
       <div class="vr opacity-25"></div>
       <div class="text-center"><div class="fw-bold fs-4">BTE</div><div class="small opacity-75">Affiliated</div></div>
       <div class="vr opacity-25"></div>
-      <div class="fw-bold fs-4 text-center"><div>5</div><div class="small opacity-75">Departments</div></div>
+      <div class="fw-bold fs-4 text-center"><div>6</div><div class="small opacity-75">Departments</div></div>
     </div>
   </div>
   <div class="scroll-indicator"><i class="bi bi-chevron-double-down fs-3 text-white opacity-75"></i></div>
@@ -212,8 +212,10 @@
         <h2 class="display-5 fw-bold mb-4">Placement & Career Development</h2>
         <p class="text-muted mb-4">Our dedicated Training & Placement Cell connects students with top companies through campus drives, internships, and continuous skill development programmes.</p>
         <div class="row g-3 mb-4">
-          <div class="col-6"><div class="stat-card"><div class="stat-num counter" data-target="85">0</div><div class="small mt-1">% Placement Rate</div></div></div>
-          <div class="col-6"><div class="stat-card" style="background:#198754;"><div class="stat-num counter" data-target="50">0</div><div class="small mt-1">Top Recruiters</div></div></div>
+          <div class="col-6"><div class="stat-card"><div class="stat-num counter" data-target="{{ placement_stats.students_placed }}">0</div><div class="small mt-1">Students Placed</div></div></div>
+          <div class="col-6"><div class="stat-card" style="background:#198754;"><div class="stat-num counter" data-target="{{ placement_stats.campus_drives }}">0</div><div class="small mt-1">Campus Drives</div></div></div>
+          <div class="col-6"><div class="stat-card" style="background:#fd7e14;"><div class="stat-num counter" data-target="{{ placement_stats.placement_offers }}">0</div><div class="small mt-1">Placement Offers</div></div></div>
+          <div class="col-6"><div class="stat-card" style="background:#6f42c1;"><div class="stat-num">{{ placement_stats.total_companies }}</div><div class="small mt-1">Companies Visited</div></div></div>
         </div>
         <a href="{% url 'placements:list' %}" class="btn btn-primary rounded-pill px-4">View Placements <i class="bi bi-arrow-right ms-1"></i></a>
       </div>
@@ -229,7 +231,8 @@
   </div>
 </section>
 
-<!-- Projects -->
+<!-- Student Projects -->
+{% if projects %}
 <section class="section-padding bg-dark text-white">
   <div class="container">
     <div class="text-center mb-5 gsap-reveal">
@@ -250,8 +253,10 @@
     </div>
   </div>
 </section>
+{% endif %}
 
 <!-- Events Preview -->
+{% if events_preview %}
 <section class="section-padding bg-light">
   <div class="container">
     <div class="d-flex justify-content-between align-items-end mb-5 gsap-reveal flex-wrap gap-3">
@@ -280,6 +285,7 @@
     </div>
   </div>
 </section>
+{% endif %}
 
 <!-- Gallery Preview -->
 <section class="section-padding">
