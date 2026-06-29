@@ -27,7 +27,8 @@ urlpatterns = [
     path('events/', include('events.urls')),
     path('gallery/', include('gallery.urls')),
     path('placements/', include('placements.urls')),
+    path('faculty/', include('faculty.urls')),
+    path('students/', include('students.urls')),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

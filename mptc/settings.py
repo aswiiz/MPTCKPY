@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'events',
     'gallery',
     'placements',
+    'faculty',
+    'students',
 ]
 
 MIDDLEWARE = [
@@ -145,8 +147,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Production security (applied when DEBUG=False)
-if not DEBUG:
+# Production security (applied when DEBUG=False). Keep local manage.py/app.py
+# usable with the default environment.
+if not DEBUG and not os.environ.get('DISABLE_SSL_REDIRECT', 'False').lower() == 'true':
     SECURE_HSTS_SECONDS = 31536000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_SSL_REDIRECT = True
@@ -159,4 +162,3 @@ if not DEBUG:
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
-

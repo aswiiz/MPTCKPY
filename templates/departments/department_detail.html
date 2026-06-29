@@ -1,52 +1,161 @@
 {% extends 'base.html' %}
+{% block title %}{{ department.name }} | MPTC Karunagappally{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="card shadow border-0">
-        <div class="card-body p-5">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h1 class="text-primary m-0">{{ department.name }}</h1>
-                <span class="badge bg-secondary fs-5">{{ department.code }}</span>
-            </div>
-            <div class="row mb-5">
-                <div class="col-md-8">
-                    <h4>About the Department</h4>
-                    <p class="lead">{{ department.description }}</p>
-                </div>
-                <div class="col-md-4">
-                    <div class="bg-light p-4 rounded text-center">
-                        <h5 class="text-muted mb-3">Head of Department</h5>
-                        <h4>{{ department.hod_name }}</h4>
-                        <hr>
-                        <p class="mb-0">Established: <strong>{{ department.established_year }}</strong></p>
-                    </div>
-                </div>
-            </div>
-            
-            <h3 class="mb-4">Faculty Members</h3>
-            <div class="row g-4">
-                {% for faculty in department.faculties.all %}
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center">
-                            {% if faculty.image %}
-                                <img src="{{ faculty.image.url }}" class="rounded-circle mb-3" width="100" height="100" style="object-fit: cover;">
-                            {% else %}
-                                <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 100px; height: 100px;">
-                                    <i class="bi bi-person text-secondary fs-1"></i>
-                                </div>
-                            {% endif %}
-                            <h5>{{ faculty.name }}</h5>
-                            <p class="text-muted mb-1">{{ faculty.designation }}</p>
-                            <small>{{ faculty.qualification }}</small>
-                        </div>
-                    </div>
-                </div>
-                {% empty %}
-                <p class="text-muted">No faculty members listed yet.</p>
-                {% endfor %}
-            </div>
+<section class="dept-hero" style="background-image:url('/media/{{ department.image }}');">
+  <div class="dept-hero-content px-3" data-aos="fade-up">
+    <i class="{{ department.icon }} display-1 text-warning mb-3"></i>
+    <h1 class="display-3 fw-bold">{{ department.name }}</h1>
+    <p class="lead">{{ department.tagline }}</p>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-7" data-aos="fade-up">
+        <p class="section-kicker">Department Profile</p>
+        <h2 class="display-6 fw-bold mb-4">About the Department</h2>
+        <p class="lead text-muted">The {{ department.name }} department at Model Polytechnic College Karunagappally offers diploma-level technical education with a focus on practical learning, professional discipline, and industry readiness.</p>
+        <p class="text-muted mb-0">Detailed official history, head of department details, sanctioned intake, and faculty profiles will be updated after verification from college records.</p>
+      </div>
+      <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="info-panel">
+          <h3 class="h5 fw-bold mb-3">Official Details</h3>
+          <div class="mini-list">
+            <span>Programme: Diploma in Engineering</span>
+            <span>Department Code: {{ department.code }}</span>
+            <span>Affiliation: Board of Technical Education, Kerala</span>
+            <span>Approval: AICTE</span>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
+<section class="section-padding bg-light">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-up">
+        <div class="feature-block h-100">
+          <i class="bi bi-eye-fill"></i>
+          <h3>Vision</h3>
+          <p>{{ updated_soon }}</p>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-block h-100">
+          <i class="bi bi-bullseye"></i>
+          <h3>Mission</h3>
+          <p>{{ updated_soon }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <p class="section-kicker">Academics</p>
+      <h2 class="display-6 fw-bold">Subjects & Laboratories</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-up">
+        <div class="clean-card h-100">
+          <h3 class="h5 fw-bold mb-3">Core Subject Areas</h3>
+          <div class="chip-grid">
+            {% for subject in department.subjects %}<span>{{ subject }}</span>{% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="clean-card h-100">
+          <h3 class="h5 fw-bold mb-3">Laboratories</h3>
+          <div class="chip-grid">
+            {% for lab in department.labs %}<span>{{ lab }}</span>{% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding bg-dark text-white">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="dark-card h-100">
+          <i class="bi bi-people"></i>
+          <h3>Faculty</h3>
+          <p>{{ updated_soon }}</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="dark-card h-100">
+          <i class="bi bi-kanban"></i>
+          <h3>Projects</h3>
+          <p>{{ updated_soon }}</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="dark-card h-100">
+          <i class="bi bi-award"></i>
+          <h3>Achievements</h3>
+          <p>{{ updated_soon }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-7" data-aos="fade-up">
+        <h2 class="display-6 fw-bold mb-4">Placement Information</h2>
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle">
+            <tbody>
+              <tr><th>Students Placed</th><td>Information will be updated.</td></tr>
+              <tr><th>Placement Offers</th><td>Information will be updated.</td></tr>
+              <tr><th>Recruiting Companies</th><td>Information will be updated.</td></tr>
+              <tr><th>Student Names</th><td>Information will be updated.</td></tr>
+              <tr><th>Placement Year</th><td>Information will be updated.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="info-panel h-100">
+          <h3 class="h5 fw-bold mb-3">Downloads</h3>
+          <p class="text-muted">{{ updated_soon }}</p>
+          <a class="btn btn-outline-primary rounded-pill disabled" aria-disabled="true">Downloads Pending</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding bg-light">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4" data-aos="fade-up">
+      <div>
+        <p class="section-kicker">Gallery</p>
+        <h2 class="display-6 fw-bold">Department Gallery</h2>
+      </div>
+      <a href="{% url 'gallery:list' %}" class="btn btn-outline-primary rounded-pill">Open Gallery</a>
+    </div>
+    <div class="row g-3">
+      {% for image in gallery_preview %}
+      <div class="col-6 col-lg-4" data-aos="fade-up">
+        <img src="{{ image.url }}" class="img-fluid image-tile" alt="{{ image.name }}" loading="lazy">
+      </div>
+      {% empty %}
+      <div class="col-12"><div class="empty-state">Image will be updated soon.</div></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 {% endblock %}

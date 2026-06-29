@@ -5,7 +5,8 @@ from .views import (
     ComputerHardwareEngineeringView,
     ElectronicsEngineeringView,
     ElectronicsCommunicationView,
-    ElectricalElectronicsView
+    ElectricalElectronicsView,
+    MechanicalEngineeringView,
 )
 
 app_name = 'departments'
@@ -16,4 +17,5 @@ urlpatterns = [
     path('electronics-engineering/', ElectronicsEngineeringView.as_view(), name='ee'),
     path('electronics-communication/', ElectronicsCommunicationView.as_view(), name='ece'),
     path('electrical-electronics/', ElectricalElectronicsView.as_view(), name='eee'),
+    path('mechanical-engineering/', MechanicalEngineeringView.as_view(), name='me'),
 ]
